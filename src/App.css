@@ -1,0 +1,363 @@
+/* ── Layout ─────────────────────────────────────────── */
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.app-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.app-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0 0 4px;
+  color: #1a1a2e;
+}
+
+.subtitle {
+  color: #888;
+  margin: 0 0 20px;
+  font-size: 0.95rem;
+}
+
+/* ── Mode toggle ─────────────────────────────────────── */
+.mode-toggle {
+  display: inline-flex;
+  border: 2px solid #ddd;
+  border-radius: 50px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.mode-toggle button {
+  padding: 10px 28px;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  color: #666;
+}
+
+.mode-toggle button.active {
+  background: #e8451e;
+  color: #fff;
+  border-radius: 50px;
+}
+
+/* ── Cuisine filters ─────────────────────────────────── */
+.cuisine-filters {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.filters-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.filters-header h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.bulk-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.bulk-actions button {
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: #fff;
+  cursor: pointer;
+  color: #555;
+  transition: background 0.15s;
+}
+
+.bulk-actions button:hover:not(:disabled) {
+  background: #f0f0f0;
+}
+
+.bulk-actions button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.cuisine-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cuisine-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  user-select: none;
+  border: 2px solid transparent;
+}
+
+.cuisine-chip input[type="checkbox"] {
+  display: none;
+}
+
+.cuisine-chip.on {
+  background: #e8451e;
+  color: #fff;
+}
+
+.cuisine-chip.off {
+  background: #f0f0f0;
+  color: #888;
+  border-color: #e0e0e0;
+}
+
+.cuisine-chip.on:hover {
+  background: #c73a18;
+}
+
+.cuisine-chip.off:hover {
+  background: #e4e4e4;
+}
+
+/* ── Randomize section ───────────────────────────────── */
+.randomize-section {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.randomize-btn {
+  padding: 14px 48px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  background: #e8451e;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(232,69,30,0.35);
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+  letter-spacing: 0.02em;
+}
+
+.randomize-btn:hover:not(:disabled) {
+  background: #c73a18;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(232,69,30,0.4);
+}
+
+.randomize-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.randomize-btn:disabled {
+  background: #ccc;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.pool-warn {
+  margin-top: 10px;
+  color: #c0392b;
+  font-size: 0.9rem;
+}
+
+.pool-count {
+  margin-top: 8px;
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+/* ── Results ─────────────────────────────────────────── */
+.results {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.results-hint {
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+/* ── Card ────────────────────────────────────────────── */
+.card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: relative;
+  transition: box-shadow 0.2s;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.card--winner {
+  border: 3px solid #e8451e;
+  box-shadow: 0 0 0 4px rgba(232,69,30,0.15), 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.card-remove {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: #f0f0f0;
+  color: #888;
+  font-size: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+  z-index: 1;
+}
+
+.card-remove:hover {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.card-body {
+  padding: 18px 18px 16px;
+}
+
+.card-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: #1a1a2e;
+  padding-right: 28px;
+}
+
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 0.82rem;
+  color: #666;
+}
+
+.meta-neighborhood {
+  flex-basis: 100%;
+}
+
+.meta-price,
+.meta-rating,
+.meta-time,
+.meta-difficulty {
+  font-weight: 600;
+}
+
+.card-notes {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 8px 0 10px;
+  line-height: 1.45;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.tag {
+  background: #f5f0ff;
+  color: #6c4eb8;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.card-link {
+  font-size: 0.82rem;
+  color: #e8451e;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+/* ── Winner ──────────────────────────────────────────── */
+.winner-banner {
+  text-align: center;
+}
+
+.winner-banner > p {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #e8451e;
+  margin-bottom: 16px;
+}
+
+.winner-banner .card {
+  max-width: 380px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* ── No picks ────────────────────────────────────────── */
+.no-picks {
+  text-align: center;
+  color: #888;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: #e8451e;
+  cursor: pointer;
+  font-size: inherit;
+  font-weight: 600;
+  padding: 0;
+  text-decoration: underline;
+}

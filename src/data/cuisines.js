@@ -1,0 +1,23 @@
+// All cuisine / style tags used across restaurants and recipes
+export const CUISINES = [
+  { id: 'american',      label: 'American' },
+  { id: 'burgers',       label: 'Burgers & Fries' },
+  { id: 'pizza',         label: 'Pizza' },
+  { id: 'mexican',       label: 'Mexican' },
+  { id: 'tacos',         label: 'Tacos' },
+  { id: 'chinese',       label: 'Chinese' },
+  { id: 'japanese',      label: 'Japanese' },
+  { id: 'sushi',         label: 'Sushi' },
+  { id: 'thai',          label: 'Thai' },
+  { id: 'vietnamese',    label: 'Vietnamese' },
+  { id: 'korean',        label: 'Korean' },
+  { id: 'indian',        label: 'Indian' },
+  { id: 'mediterranean', label: 'Mediterranean' },
+  { id: 'italian',       label: 'Italian' },
+  { id: 'seafood',       label: 'Seafood' },
+  { id: 'fried-chicken', label: 'Fried Chicken' },
+  { id: 'bbq',           label: 'BBQ' },
+  { id: 'sandwiches',    label: 'Sandwiches' },
+  { id: 'breakfast',     label: 'Breakfast & Brunch' },
+  { id: 'vegetarian',    label: 'Vegetarian / Vegan' },
+];
