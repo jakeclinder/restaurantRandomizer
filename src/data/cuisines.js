@@ -18,6 +18,9 @@ export const CUISINES = [
   { id: 'fried-chicken', label: 'Fried Chicken' },
   { id: 'bbq',           label: 'BBQ' },
   { id: 'sandwiches',    label: 'Sandwiches' },
-  { id: 'breakfast',     label: 'Breakfast & Brunch' },
+  { id: 'breakfast',      label: 'Breakfast & Brunch' },
   { id: 'vegetarian',    label: 'Vegetarian / Vegan' },
+  { id: 'southeast-asian', label: 'Southeast Asian' },
+  { id: 'african',       label: 'African' },
+  { id: 'caribbean',     label: 'Caribbean' },
 ];
